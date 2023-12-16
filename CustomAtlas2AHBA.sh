@@ -1,6 +1,7 @@
 #!/bin/bash
 currentPath=$(pwd)
 #import D_K308 atlas
+# This script can register a customized atlas to the cortical surface of AHBA donors, using the D-K308 template as an example."
 git clone https://github.com/RafaelRomeroGarcia/subParcellation
 # Select the corresponding annot file names
 DKpath="$currentPath/subParcellation/500mm parcellation (308 regions)"
@@ -8,9 +9,9 @@ filesToCopy=("rh.500.aparc.annot" "lh.500.aparc.annot")
 CustomAtlas="$DKpath/$file"
 
 # Import AHBA reconstruction results, comment out if already present
-git clone https://github.com/lubiandexiaochitan/AHBA_SurferRecon
+# git clone https://github.com/lubiandexiaochitan/AHBA_SurferRecon
 # The .annot file for the custom atlas needs to be placed in the 'label' folder of fsaverage.
-Labelpath="$currentPath/AHBA_SurferRecon/freesurfer/fsaverage/label"
+Labelpath="$currentPath/freesurfer/fsaverage/label"
 
 # Copy .annot files
 for file in "${filesToCopy[@]}"; do
